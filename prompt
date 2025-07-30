@@ -1,0 +1,19 @@
+I am doing time sequence prediction using transformer.
+
+the transformer will predict next pred_len steps out of the past seq_len steps
+The number of features of each time step is denoted as num_features
+
+the input to the encoder is the time sequence in seq_len
+the input to the decoder is the label_len + pred_len, where label_len is just part of seq_en used for bootstraping, and what is in the pred_len could be some other bootstraping value.
+
+the output from the decoder will be the predicted label_len + pred_len, in which the pred_len contains the part we want
+
+which is just the way autoformer in thuml does.
+
+however, now I am going to alter this to capture epistemic uncertainty. I am going to do this by using the distributional latent variables and the reparameterization trick.
+
+
+I have a question. since the encoder output is [B, seq_len, d_model], should I alter it also (like reduce it to mu:     [B, latent_dim], logvar: [B, latent_dim]) if I am going to make it vae?
+
+can you show me the code where a vanilla vae that does this task gets trained (dummy time series data in batches would suffice) and do dummy predictions?
+also tell me how the loss is computed
