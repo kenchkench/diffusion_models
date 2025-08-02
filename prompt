@@ -10,6 +10,14 @@ the output from the decoder will be the predicted label_len + pred_len, in which
 
 which is just the way autoformer in thuml does.
 
+
+however, now I am going to alter this to capture aleatoric uncertainty. I am going to do this by using distributional decoder output. the decoder should also output logvar.
+
+can you show me the sample code where a transformer model that does this and use dummy data for training (also show me how the loss is computed) and prediction
+
+
+
+
 however, now I am going to alter this to capture epistemic uncertainty. I am going to do this by using the distributional latent variables and the reparameterization trick.
 
 
